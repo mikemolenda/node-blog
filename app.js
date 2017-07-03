@@ -8,25 +8,63 @@ var session = require('express-session');
 var multer = require('multer');
 var moment = require('moment');
 var expressValidator = require('express-validator');
+var expressMessages = require('express-messages');
+var flash = require('connect-flash');
+var mongo = require('mongodb');
 
 var db = require('monk')('localhost/node-blog');
+
+var upload = multer({dest: 'uploads/'});
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
-// View engine setup
+// Set up view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-// Middleware setup
+// Set up parsing and path middleware
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Set up Express Session
+app.use(session({
+    secret: 'secret',
+    saveUninitialized: true,
+    resave: true
+}));
+
+// Set up Express Validator (form validation)
+app.use(expressValidator({
+    errorFormatter: function (param, msg, value) {
+        var namespace = param.split('.');
+        var root = namespace.shift();
+        var formParam = root;
+
+        while(namespace.length) {
+            formParam += '[' + namespace.shift() + ']';
+        }
+
+        return {
+            param : formParam,
+            msg: msg,
+            value: value
+        };
+    }
+}));
+
+// Set up Connect-Flash (session messages)
+app.use(flash());
+app.use(function (req, res, next) {
+    res.locals.messages = expressMessages(req, res);
+    next();
+});
 
 // Make DB accessible by router
 app.use(function (req, res, next) {
