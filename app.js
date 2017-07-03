@@ -14,7 +14,7 @@ var mongo = require('mongodb');
 
 var db = require('monk')('localhost/node-blog');
 
-var upload = multer({dest: 'uploads/'});
+var upload = multer({ dest: 'uploads/' });
 
 var index = require('./routes/index');
 var users = require('./routes/users');

@@ -30,9 +30,9 @@ html(lang='en')
                 // Collect the nav links, forms, and other content for toggling
                 #nav-main.navbar-collapse.collapse
                     ul.nav.navbar-nav
-                        li
+                        li(class=(pageid == 'about' ? 'active' : ''))
                             a(href='/about') About
-                        li
+                        li(class=(pageid == 'contact' ? 'active' : ''))
                             a(href='/contact') Contact
                     ul.nav.navbar-nav.navbar-right
                         // Show login if not logged in
@@ -45,14 +45,29 @@ html(lang='en')
                             li
                                 a(href='/posts/add')
                             li
-                                a(href='/categories/add')
+                                a(href='/topics/add')
                             li
                                 a(href='/logout')
                                     i.fa.fa-sign-out(aria-hidden='true')
                                     | &nbsp;Log out
 
         .container
-            block content
+            .row
+                // Blog content
+                .col-md-8
+                    block content
+                // Sidebar
+                .col-md-4
+                    .well
+                        h4 Topics
+                        ul.list-unstyled
+                            li
+                                a(href='#') Topic name
+                    .well
+                        h4 Archives
+                        ul.list-unstyled
+                            li
+                                a(href='#') Jan 2017
             footer
                 hr
                 .text-center &copy; 2017 #{author}
