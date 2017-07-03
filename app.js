@@ -9,6 +9,8 @@ var multer = require('multer');
 var moment = require('moment');
 var expressValidator = require('express-validator');
 
+var db = require('monk')('localhost/node-blog');
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -25,6 +27,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Make DB accessible by router
+app.use(function (req, res, next) {
+    req.db = db;
+    next();
+});
 
 app.use('/', index);
 app.use('/users', users);
