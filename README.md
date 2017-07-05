@@ -10,4 +10,4 @@ Where `${mongo_path}` is something like `/usr/local/opt/mongodb`.
 
 ## Notes
 - Bootstrap template modified from _Start Bootstrap - Blog Home_ and _Blog Post_  (https://github.com/BlackrockDigital)
-- File upload buttons created with Bootstrap FileStyle (http://markusslima.github.io/bootstrap-filestyle/)
+- File upload buttons created with _Bootstrap FileStyle_ (http://markusslima.github.io/bootstrap-filestyle/)
