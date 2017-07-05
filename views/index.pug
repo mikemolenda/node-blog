@@ -3,3 +3,12 @@ extends layout
 block content
     h1.page-header= title
 
+    if posts
+        each post, i in posts
+            .post
+                h2
+                    a(href='/posts/show/#{post._id}')
+                        =post.title
+                h5 Posted in #{post.category} by #{post.author} on #{moment(post.date).format('MMM D YYYY')}
+                =post.body
+                a.more(href='/posts/show/#{post._id}') Read More&hellip;

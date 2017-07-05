@@ -9,3 +9,26 @@ a {
 footer {
     margin: 50px 0;
 }
+
+.post {
+    margin-bottom: 3.0em;
+}
+
+.post h2 a {
+    color: #666;
+}
+
+.post h2 a:hover {
+    color: #00B7FF;
+    text-decoration: none;
+}
+
+.post h5 {
+    color: #888;
+    margin-bottom: 1.5em;
+}
+
+a.more {
+    display: block;
+    padding-top: 1.0em;
+}

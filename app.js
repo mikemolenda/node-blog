@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var multer = require('multer');
-var moment = require('moment');
 var expressValidator = require('express-validator');
 var expressMessages = require('express-messages');
 var flash = require('connect-flash');
@@ -20,6 +19,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// Set up Moment.js globally
+app.locals.moment = require('moment');
 
 // Set up view engine
 app.set('views', path.join(__dirname, 'views'));
