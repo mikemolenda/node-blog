@@ -9,4 +9,5 @@ Create directories `${mongo_path}/data/db` and `${mongo_path}/log`, then run:
 Where `${mongo_path}` is something like `/usr/local/opt/mongodb`. 
 
 ## Notes
-Bootstrap template modified from Start Bootstrap - Blog Home (https://github.com/BlackrockDigital/startbootstrap-blog-home) and Start Bootstrap - Blog Post (https://github.com/BlackrockDigital/startbootstrap-blog-post)
+- Bootstrap template modified from Start Bootstrap - Blog Home (https://github.com/BlackrockDigital/startbootstrap-blog-home) and Start Bootstrap - Blog Post (https://github.com/BlackrockDigital/startbootstrap-blog-post)
+- File upload buttons created with Bootstrap FileStyle(http://markusslima.github.io/bootstrap-filestyle/)
