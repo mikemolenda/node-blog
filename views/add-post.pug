@@ -17,7 +17,7 @@ block content
             select.form-control(name='postCategory')
                 each category, i in categories
                     option(value='#{category.name}') #{category.name}
-                // TODO: Render add category field on select
+                // TODO: Dynamically add new categories (SEE: http://www.marcorpsa.com/ee/t1161.html)
                 option(value='') Add new&hellip;
         .form-group
             label Headline Image (Optional)
