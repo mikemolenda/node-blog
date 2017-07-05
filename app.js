@@ -16,7 +16,7 @@ var db = require('monk')('localhost/node-blog');
 var upload = multer({ dest: 'uploads/' });
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var posts = require('./routes/posts');
 
 var app = express();
 
@@ -74,8 +74,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+// Set up routing
 app.use('/', index);
-app.use('/users', users);
+app.use('/posts', posts);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
