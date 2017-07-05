@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     posts.find({}, {}, function(err, posts) {
         res.render('index', {
             title: 'Blog',
-            posts: posts
+            posts: posts.reverse()
         });
     });
 });
