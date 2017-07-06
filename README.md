@@ -11,4 +11,4 @@ Where `${mongo_path}` is something like `/usr/local/opt/mongodb`.
 ## Notes
 - Bootstrap template modified from _Start Bootstrap - Blog Home_ and _Blog Post_  (https://github.com/BlackrockDigital)
 - File upload buttons created with _Bootstrap FileStyle_ (http://markusslima.github.io/bootstrap-filestyle/)
-- Category selection dropdown uses _bootstrap-select_ (https://github.com/silviomoreto/bootstrap-select/) and a modified 
+- Category selection autocomplete uses _jQuery UI Autocomplete Widget_ (https://jqueryui.com/autocomplete/)
