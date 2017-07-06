@@ -10,23 +10,30 @@ block content
 
     form(method='post', action='/posts/add', enctype='multipart/form-data')
         .form-group
-            label Title
-            input.form-control(name='postTitle', type='text')
-        .form-group
-            label Category
-            // TODO: Auto-complete with categories from DB
+            label(for='postTitle') Title
+            input.form-control(name='postTitle', id='postTitle', type='text')
+        .form-group.ui-widget
+            label(for='postCategory') Category
+            // FIXME: Autocomplete list style
             input.form-control(name='postCategory', id='postCategory', type='text')
         .form-group
-            label Headline Image (Optional)
-            input.filestyle(name='headlineImage', type='file', data-buttonBefore='true' data-icon='false')
+            label(for='headlineImage') Headline Image (Optional)
+            input.filestyle(name='headlineImage', id='headlineImage', type='file', data-buttonBefore='true' data-icon='false')
         .form-group
-            label Body
-            textarea.form-control(name='postBody', id='body')
+            label(for='postBody') Body
+            textarea.form-control(name='postBody', id='postBody')
         .form-group
-            label Author
+            label(for='postAuthor') Author
             // TODO: Get this from currently logged in user
-            input.form-control(name='postAuthor', type='text')
-        input.btn.ntn-default(name='submit', type='submit', value='Post')
+            input.form-control(name='postAuthor', id='postAuthor', type='text')
+        input.btn.ntn-default(name='submit', type='submit', id='submit' value='Post')
 
     script(src='/javascripts/bootstrap-filestyle-1.2.1/bootstrap-filestyle.min.js')
-    script(src='/javascripts/jquery-ui-1.12.1/jquery-ui.min.js')
+    script.
+        $(function () {
+            var categories = '#{categories}'.split(',');
+            $("#postCategory").autocomplete({
+                source: categories
+            });
+        });
+

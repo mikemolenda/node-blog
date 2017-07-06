@@ -11,14 +11,14 @@ var upload = multer({ dest: 'uploads/' });
  * Renders new post form
 */
 router.get('/add', function(req, res, next) {
-    // Get categories data to pass to select field
-    var categories = db.get('categories');
-    categories.find({}, {}, function (err, categories) {
+    var categories = db.get('posts');
+    categories.distinct('category', function(err, categories) {
         res.render('add-post', {
             title: 'Add a new post',
             categories: categories
         });
     });
+
 });
 
 /*
