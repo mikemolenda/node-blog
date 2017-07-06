@@ -14,11 +14,8 @@ block content
             input.form-control(name='postTitle', type='text')
         .form-group
             label Category
-            select.form-control(name='postCategory')
-                each category, i in categories
-                    option(value='#{category.name}') #{category.name}
-                // TODO: Dynamically add new categories (SEE: http://www.marcorpsa.com/ee/t1161.html)
-                option(value='') Add new&hellip;
+            // TODO: Auto-complete with categories from DB
+            input.form-control(name='postCategory' type='text')
         .form-group
             label Headline Image (Optional)
             input.filestyle(name='headlineImage', type='file', data-buttonBefore='true' data-icon='false')
