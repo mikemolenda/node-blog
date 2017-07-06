@@ -15,7 +15,7 @@ block content
         .form-group
             label Category
             // TODO: Auto-complete with categories from DB
-            input.form-control(name='postCategory' type='text')
+            input.form-control(name='postCategory', id='postCategory', type='text')
         .form-group
             label Headline Image (Optional)
             input.filestyle(name='headlineImage', type='file', data-buttonBefore='true' data-icon='false')
@@ -29,3 +29,4 @@ block content
         input.btn.ntn-default(name='submit', type='submit', value='Post')
 
     script(src='/javascripts/bootstrap-filestyle-1.2.1/bootstrap-filestyle.min.js')
+    script(src='/javascripts/jquery-ui-1.12.1/jquery-ui.min.js')
