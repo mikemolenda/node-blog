@@ -55,6 +55,17 @@ ul.errors li {
         margin-bottom: 1.5em;
     }
 
+.sidebar {
+    margin-top: 100px;
+}
+
+    .sidebar .well {
+        background: none;
+        border: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
 .ui-autocomplete {
     position: absolute;
     z-index: 1000;

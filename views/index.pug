@@ -15,18 +15,20 @@ block main
                 a.more(href='/posts/show/#{post._id}') Read More&hellip;
 
 block sidebar
-    if categories
-        .well
-            h4 Categories
-            ul.list-unstyled
+
+    .well
+        h4 Categories
+        ul.list-unstyled
+            if categories
                 each category, i in categories
                     li
                         // TODO: Set link address
                         a(href='#') #{category}
-    if archives
-        .well
-            h4 Archives
-            ul.list-unstyled
+
+    .well
+        h4 Archives
+        ul.list-unstyled
+            if archives
                 each archive, i in archives
                     li
                         // TODO: Set link address

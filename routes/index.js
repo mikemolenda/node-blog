@@ -13,11 +13,13 @@ router.get('/', function(req, res, next) {
     var categories;
     var archives =[];
 
+    // FIXME: Doesn't always load
     // Get categories
     posts.distinct('category', function(err, posts) {
         categories = posts;
     });
 
+    // FIXME: Doesn't always load
     // Get archive dates
     posts.aggregate([
         {'$project': {
@@ -40,7 +42,7 @@ router.get('/', function(req, res, next) {
     // Get posts and render page
     posts.find({}, {}, function(err, posts) {
         res.render('index', {
-            title: 'Blog',
+            title: 'Recent Posts',
             posts: posts.reverse(),
             categories: categories,
             archives: archives
