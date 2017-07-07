@@ -34,8 +34,8 @@ html(lang='en')
                 // Collect the nav links, forms, and other content for toggling
                 #nav-main.navbar-collapse.collapse
                     ul.nav.navbar-nav
-                        li(class=(pageid == 'about' ? 'active' : ''))
-                            a(href='/about') About
+                        li(class=(pageid == 'add-post' ? 'active' : ''))
+                            a(href='/posts/add') Add Post
                         li(class=(pageid == 'contact' ? 'active' : ''))
                             a(href='/contact') Contact
                     ul.nav.navbar-nav.navbar-right
@@ -57,6 +57,7 @@ html(lang='en')
 
         .container
             .row
+                != messages()
                 // Main content
                 .col-md-8
                     block content

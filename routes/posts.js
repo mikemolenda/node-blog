@@ -33,7 +33,11 @@ router.post('/add', upload.single('headlineImage'), function(req, res, next) {
     var errors = req.validationErrors();
 
     if (errors) {
-        res.render('add-post', { errors: errors });
+        for (var i = 0; i < errors.length; i++) {
+            req.flash('errors', errors[i].msg);
+        }
+
+        res.redirect('/posts/add');
     } else {
         // If fields valid, write post to DB
         try {
