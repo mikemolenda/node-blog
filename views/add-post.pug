@@ -14,8 +14,7 @@ block content
             input.form-control(name='postTitle', id='postTitle', type='text')
         .form-group.ui-widget
             label(for='postCategory') Category
-            // FIXME: Autocomplete list style
-            input.form-control(name='postCategory', id='postCategory', type='text')
+            input.form-control.autocomplete(name='postCategory', id='postCategory', type='text')
         .form-group
             label(for='headlineImage') Headline Image (Optional)
             input.filestyle(name='headlineImage', id='headlineImage', type='file', data-buttonBefore='true' data-icon='false')

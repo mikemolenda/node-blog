@@ -1,58 +1,86 @@
-body {
-
-}
-
 a {
     color: #00B7FF;
 }
 
+    a.more {
+        display: block;
+        padding-top: 1.0em;
+    }
+
 footer {
     margin: 50px 0;
+}
+
+ul.success li {
+    margin: 0 0 20px -40px;
+    padding: 15px;
+    border: 1px solid #d6e9c6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    list-style-type: none;
+}
+
+ul.errors li {
+    margin: 0 0 20px -40px;
+    padding: 15px;
+    border: 1px solid #ebccd1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #f2dede;
+    color: #a94442;
+    list-style-type: none;
 }
 
 .post {
     margin-bottom: 3.0em;
 }
 
-.post h2 a {
-    color: #666;
-}
+    .post h2 a {
+        color: #666;
+    }
 
-.post h2 a:hover {
-    color: #00B7FF;
-    text-decoration: none;
-}
+    .post h2 a:hover {
+        color: #00B7FF;
+        text-decoration: none;
+    }
 
-.post h5 {
-    color: #888;
-    margin-bottom: 1.5em;
-}
+    .post h5 {
+        color: #888;
+        margin-bottom: 1.5em;
+    }
 
-a.more {
-    display: block;
-    padding-top: 1.0em;
-}
-
-ul.success li {
-    list-style-type: none;
-    padding: 15px;
-    margin-bottom: 20px;
-    margin-left: -40px;
-    border: 1px solid transparent;
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin-top: 2px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    list-style: none;
 }
 
-ul.errors li {
-    list-style-type: none;
-    padding: 15px;
-    margin-bottom: 20px;
-    margin-left: -40px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
+.ui-widget-content {
+    padding: 3px;
 }
+
+    .ui-widget-content .ui-state-active {
+        border: 1px solid #eee;
+        background-color: #eee;
+        color: #333;
+    }
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
