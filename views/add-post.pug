@@ -24,6 +24,12 @@ block main
             input.form-control(name='postAuthor', id='postAuthor', type='text')
         input.btn.ntn-default(name='submit', type='submit', id='submit' value='Post')
 
+block scripts
+    // jQuery UI
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
+    // bootstrap-filestyle
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js')
+
     script.
         $(function () {
             var categories = '#{categories}'.split(',');

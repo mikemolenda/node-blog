@@ -12,14 +12,6 @@ html(lang='en')
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css')
         // Custom CSS
         link(rel='stylesheet', href='/stylesheets/style.css')
-        // jQuery
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-        // Bootstrap
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
-        // jQuery UI
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
-        // bootstrap-filestyle
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js')
     body
         nav.navbar.navbar-inverse.navbar-static-top(role='navigation')
             .container
@@ -65,3 +57,10 @@ html(lang='en')
         footer
             hr
             .text-center &copy; 2017 #{author}
+
+        // jQuery
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        // Bootstrap
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
+
+        block scripts
