@@ -27,8 +27,8 @@ router.get('/add', function(req, res, next) {
  */
 router.post('/add', upload.single('headlineImage'), function(req, res, next) {
     // Validate fields
-    req.checkBody('postTitle', 'Title must not be empty').notEmpty();
-    req.checkBody('postBody', 'Body must not be empty').notEmpty();
+    req.checkBody('postTitle', '<strong>Error!</strong> Title must not be empty!').notEmpty();
+    req.checkBody('postBody', '<strong>Error!</strong> Body must not be empty!').notEmpty();
 
     var errors = req.validationErrors();
 

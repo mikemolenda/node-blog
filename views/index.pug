@@ -1,7 +1,8 @@
 extends layout
 
-block content
+block main
     h1.page-header= title
+    != messages()
 
     if posts
         each post, i in posts
@@ -12,3 +13,21 @@ block content
                 h5 Posted in #{post.category} by #{post.author} on #{moment(post.date).format('MMMM D, YYYY')}
                 =post.body
                 a.more(href='/posts/show/#{post._id}') Read More&hellip;
+
+block sidebar
+    if categories
+        .well
+            h4 Categories
+            ul.list-unstyled
+                each category, i in categories
+                    li
+                        // TODO: Set link address
+                        a(href='#') #{category}
+    if archives
+        .well
+            h4 Archives
+            ul.list-unstyled
+                each archive, i in archives
+                    li
+                        // TODO: Set link address
+                        a(href='#') #{archive}

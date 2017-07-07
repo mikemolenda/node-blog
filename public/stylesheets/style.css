@@ -12,24 +12,26 @@ footer {
 }
 
 ul.success li {
-    margin: 0 0 20px -40px;
-    padding: 15px;
-    border: 1px solid #d6e9c6;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    margin: 0 0 10px -40px;
+    padding: 5px 15px;
+    border: solid #a2e99a;
+    border-width: 0 0 0 10px;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
     background-color: #dff0d8;
     color: #3c763d;
     list-style-type: none;
 }
 
 ul.errors li {
-    margin: 0 0 20px -40px;
-    padding: 15px;
-    border: 1px solid #ebccd1;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    margin: 0 0 10px -40px;
+    padding: 5px 15px;
+    border: solid #ec7580;
+    border-width: 0 0 0 10px;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
     background-color: #f2dede;
     color: #a94442;
     list-style-type: none;

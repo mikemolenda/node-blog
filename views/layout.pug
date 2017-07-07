@@ -57,24 +57,11 @@ html(lang='en')
 
         .container
             .row
-                != messages()
-                // Main content
                 .col-md-8
-                    block content
-                // Sidebar
+                    block main
+
                 .col-md-4
-                    .well
-                        // TODO: Auto-populate with categories
-                        h4 Categories
-                        ul.list-unstyled
-                            li
-                                a(href='#') Topic name
-                    .well
-                        // TODO: Auto-populate with post dates
-                        h4 Archives
-                        ul.list-unstyled
-                            li
-                                a(href='#') Jan 2017
+                    block sidebar
         footer
             hr
             .text-center &copy; 2017 #{author}
