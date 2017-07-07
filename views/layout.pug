@@ -7,21 +7,19 @@ html(lang='en')
         meta(name='author', content='')
         title= title
         // Bootstrap CSS
-        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css')
         // jQuery UI CSS
-        link(rel='stylesheet', href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
-        // jQuery-ui-bootstrap CSS
-        link(rel='stylesheet', href='/stylesheets/jquery-ui-bootstrap/jquery-ui-1.10.3.custom.css')
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css')
         // Custom CSS
         link(rel='stylesheet', href='/stylesheets/style.css')
         // jQuery
-        script(src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
-        // Bootstrap JS
-        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
-        // jQuery UI JS
-        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js", integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=", crossorigin="anonymous")
-        // Font Awesome
-        script(src='https://use.fontawesome.com/d1504199ae.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        // Bootstrap
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js')
+        // jQuery UI
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
+        // bootstrap-filestyle
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js')
     body
         nav.navbar.navbar-inverse.navbar-static-top(role='navigation')
             .container
@@ -45,8 +43,8 @@ html(lang='en')
                         if !user
                             li
                                 a(href='/login')
-                                    i.fa.fa-sign-in(aria-hidden='true')
-                                    | &nbsp;Log in
+                                    |Log in&nbsp;
+                                    span.glyphicon.glyphicon-log-in(aria-hidden='true')
                         if user
                             li
                                 a(href='/posts/add')
@@ -54,12 +52,12 @@ html(lang='en')
                                 a(href='/topics/add')
                             li
                                 a(href='/logout')
-                                    i.fa.fa-sign-out(aria-hidden='true')
-                                    | &nbsp;Log out
+                                    |Log out&nbsp;
+                                    span.glyphicon.glyphicon-log-out(aria-hidden='true')
 
         .container
             .row
-                // Blog content
+                // Main content
                 .col-md-8
                     block content
                 // Sidebar
@@ -76,6 +74,6 @@ html(lang='en')
                         ul.list-unstyled
                             li
                                 a(href='#') Jan 2017
-            footer
-                hr
-                .text-center &copy; 2017 #{author}
+        footer
+            hr
+            .text-center &copy; 2017 #{author}

@@ -27,11 +27,10 @@ block content
             input.form-control(name='postAuthor', id='postAuthor', type='text')
         input.btn.ntn-default(name='submit', type='submit', id='submit' value='Post')
 
-    script(src='/javascripts/bootstrap-filestyle-1.2.1/bootstrap-filestyle.min.js')
     script.
         $(function () {
             var categories = '#{categories}'.split(',');
-            $("#postCategory").autocomplete({
+            $('#postCategory').autocomplete({
                 source: categories
             });
         });
