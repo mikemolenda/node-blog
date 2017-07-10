@@ -31,14 +31,24 @@ block main
 block scripts
     // jQuery UI
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
+    // CKEditor
+    script(src='//cdn.ckeditor.com/4.7.1/standard/ckeditor.js')
     // bootstrap-filestyle
     script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-filestyle/1.2.1/bootstrap-filestyle.min.js')
 
+    // Category input auto-completion
     script.
-        $(function () {
+        $(function() {
             var categories = '#{categories}'.split(',');
             $('#postCategory').autocomplete({
                 source: categories
             });
         });
+
+    // CKEditor setup
+    // TODO: Config to remove unnecessary plugins (e.g. headings greater than h3) SEE https://cdn.ckeditor.com/
+    script.
+        CKEDITOR.replace('postBody');
+
+
 
