@@ -12,3 +12,4 @@ Where `${mongo_path}` is something like `/usr/local/opt/mongodb`.
 - Bootstrap template modified from _Start Bootstrap - Blog Home_ and _Blog Post_  (https://github.com/BlackrockDigital)
 - File upload buttons created with _Bootstrap FileStyle_ (http://markusslima.github.io/bootstrap-filestyle/)
 - Category selection autocomplete uses _jQuery UI Autocomplete Widget_ (https://jqueryui.com/autocomplete/)
+- Post editor uses CKEditor (http://ckeditor.com/)
