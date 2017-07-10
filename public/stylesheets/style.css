@@ -15,6 +15,10 @@ footer {
     margin: 50px 0;
 }
 
+table {
+    /*TODO style tables on post view tables to match Bootstrap table styling*/
+}
+
 ul.success li {
     margin: 0 0 10px -40px;
     padding: 5px 15px;
