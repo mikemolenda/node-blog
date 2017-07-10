@@ -10,42 +10,51 @@ router.get('/', function(req, res, next) {
     var db = req.db;
     var posts = db.get('posts');
 
-    var categories;
-    var archives =[];
-
-    // FIXME: Doesn't always load
-    // Get categories
-    posts.distinct('category', function(err, posts) {
-        categories = posts;
-    });
-
-    // FIXME: Doesn't always load
-    // Get archive dates
-    posts.aggregate([
-        {'$project': {
-            'year': { '$year': '$date' },
-            'month': { '$month': '$date' }
-        }},
-        {'$group': {
-            '_id': null,
-            'distinctDates': { '$addToSet': { 'year': '$year', 'month': '$month' } }
-        }}
-    ], function(err, posts) {
-        archiveDates = posts[0].distinctDates;
-
-        for (var i = 0; i < archiveDates.length; i++) {
-            var month = moment.monthsShort(archiveDates[i].month - 1);
-            archives.push(month + ' ' + archiveDates[i].year);
-        }
-    });
-
     // Get posts and render page
     posts.find({}, {}, function(err, posts) {
+        // Get categories
+        var uniqueCat = {};
+        var categories = posts
+            .map(function(post) {
+                return post.category;
+            })
+            .filter(function(category) {
+                return uniqueCat.hasOwnProperty(category) ? false : (uniqueCat[category] = true);
+            });
+
+        // Get archive dates
+        var uniqueMonth = {};
+        var archiveDates = {};
+        posts
+            .map(function(post) {
+                return post.date;
+            })
+            .sort(function(a, b) {
+                return moment(b).diff(moment(a));
+            })
+            .filter(function(date) {
+                var year = moment(date).format('YYYY');
+                var month = moment(date).format('MMMM YYYY');
+
+                if (!archiveDates[year]) {
+                    archiveDates[year] = [];
+                }
+
+                if (!uniqueMonth.hasOwnProperty(month)) {
+                    uniqueMonth[month] = true;
+                    archiveDates[year].push(month);
+                }
+            });
+
+        var archiveYears = Object.keys(archiveDates).sort().reverse();
+
+        // Render response
         res.render('index', {
             title: 'Recent Posts',
             posts: posts.reverse(),
             categories: categories,
-            archives: archives
+            archiveDates: archiveDates,
+            archiveYears: archiveYears
         });
     });
 });

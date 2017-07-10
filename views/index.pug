@@ -27,9 +27,17 @@ block sidebar
 
     .well
         h4 Archives
-        ul.list-unstyled
-            if archives
-                each archive, i in archives
-                    li
-                        // TODO: Set link address
-                        a(href='#') #{archive}
+
+        if archiveDates && archiveYears
+            each year, i in archiveYears
+                dl.archive-list
+                    dt
+                        a(data-toggle='collapse', href='#collapse-' + year) #{year}
+                    .collapse(id='collapse-' + year)
+                        each archiveDate, j in archiveDates[year]
+                            dd
+                                // TODO: Set link address
+                                a(href='#') #{archiveDate}
+
+
+

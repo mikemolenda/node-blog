@@ -2,6 +2,10 @@ a {
     color: #00B7FF;
 }
 
+    a:active, a:focus, a:hover, a:visited {
+        text-decoration: none;
+    }
+
     a.more {
         display: block;
         padding-top: 1.0em;
@@ -36,6 +40,15 @@ ul.errors li {
     color: #a94442;
     list-style-type: none;
 }
+
+dl.archive-list {
+    font-size: 14px;
+}
+
+    dl.archive-list dd {
+        font-weight: normal;
+        padding-left: 1.0em;
+    }
 
 .post {
     margin-bottom: 3.0em;
