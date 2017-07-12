@@ -25,7 +25,6 @@ block sidebar
             if categories
                 each category, i in categories
                     li
-                        // TODO: Set link address
                         a(href='/categories/' + category) #{category}
 
     .well
@@ -40,7 +39,7 @@ block sidebar
                         each archiveDate, j in archiveDates[year]
                             dd
                                 // TODO: Set link address
-                                a(href='#') #{archiveDate}
+                                a(href='/archives/' + archiveDate) #{archiveDate}
 
 
 

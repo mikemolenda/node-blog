@@ -17,8 +17,8 @@ var upload = multer({ dest: 'uploads/' });
 
 var index = require('./routes/index');
 var posts = require('./routes/posts');
-var categories = require('./routes/categories')
-
+var categories = require('./routes/categories');
+var archives = require('./routes/archives');
 
 var app = express();
 
@@ -81,6 +81,7 @@ app.use(function (req, res, next) {
 app.use('/', index);
 app.use('/posts', posts);
 app.use('/categories', categories);
+app.use('/archives', archives);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
