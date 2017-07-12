@@ -4,7 +4,7 @@ var mongo = require('mongodb');
 var multer = require('multer');
 
 var db = require('monk')('localhost/node-blog');
-var upload = multer({ dest: 'uploads/' });
+var upload = multer({ dest: './public/images/posts' });
 
 /*
  * GET posts/add

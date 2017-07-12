@@ -58,6 +58,10 @@ dl.archive-list {
     margin-bottom: 3.0em;
 }
 
+    .post .img-responsive {
+        margin-bottom: 1.5em;
+    }
+
     .post h2 a {
         color: #666;
     }

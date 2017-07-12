@@ -49,9 +49,10 @@ router.get('/', function(req, res, next) {
         var archiveYears = Object.keys(archiveDates).sort().reverse();
 
         // Render response
+        posts.reverse();
         res.render('index', {
             title: 'Recent Posts',
-            posts: posts.reverse(),
+            posts: posts,
             categories: categories,
             archiveDates: archiveDates,
             archiveYears: archiveYears
