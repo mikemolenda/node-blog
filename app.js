@@ -16,8 +16,10 @@ var db = require('monk')('localhost/node-blog');
 var upload = multer({ dest: 'uploads/' });
 
 var index = require('./routes/index');
-
 var posts = require('./routes/posts');
+var categories = require('./routes/categories')
+
+
 var app = express();
 
 // Set up global functions
@@ -78,6 +80,7 @@ app.use(function (req, res, next) {
 // Set up routing
 app.use('/', index);
 app.use('/posts', posts);
+app.use('/categories', categories);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
