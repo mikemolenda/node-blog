@@ -10,7 +10,9 @@ block main
                 h2
                     a(href='/posts/show/#{post._id}')
                         =post.title
-                h5 Posted in #{post.category} by #{post.author} on #{moment(post.date).format('MMMM D, YYYY')}
+                h5 Posted in&nbsp;
+                    a(href='/categories/' + post.category) #{post.category}
+                    |&nbsp;by #{post.author} on #{moment(post.date).format('MMMM D, YYYY')}
                 img.img-responsive.img-rounded(src='/images/posts/' + post.headlineImage)
                 != truncate(post.body, { length: 100, byWords: true })
                 a.more(href='/posts/show/#{post._id}') Read More
