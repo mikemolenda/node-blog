@@ -16,17 +16,13 @@ var db = require('monk')('localhost/node-blog');
 var upload = multer({ dest: 'uploads/' });
 
 var index = require('./routes/index');
-var posts = require('./routes/posts');
 
+var posts = require('./routes/posts');
 var app = express();
 
 // Set up global functions
 app.locals.moment = require('moment');
-
-app.locals.truncateText = function(text, length) {
-    // TODO: split on words, not chars - What happens if the 500th character is in the middle of an HTML tag?
-    return text.substring(0, length);
-}
+app.locals.truncate = require('truncate-html');
 
 // Set up view engine
 app.set('views', path.join(__dirname, 'views'));

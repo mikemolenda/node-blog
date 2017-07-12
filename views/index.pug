@@ -11,9 +11,8 @@ block main
                     a(href='/posts/show/#{post._id}')
                         =post.title
                 h5 Posted in #{post.category} by #{post.author} on #{moment(post.date).format('MMMM D, YYYY')}
-                != truncateText(post.body, 500)
-                | &hellip;
-                a(href='/posts/show/#{post._id}') &nbsp;Read More
+                != truncate(post.body, { length: 100, byWords: true })
+                a.more(href='/posts/show/#{post._id}') Read More
 
 block sidebar
 
