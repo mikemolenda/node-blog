@@ -15,6 +15,14 @@ footer {
     margin: 50px 0;
 }
 
+h1 {
+    color: #666;
+}
+
+h2, h3, h4, h5 {
+    color: #888;
+}
+
 table {
     /*TODO style tables on post view tables to match Bootstrap table styling*/
 }
@@ -62,11 +70,11 @@ dl.archive-list {
         margin-bottom: 1.5em;
     }
 
-    .post h2 a {
+    .post h1 a {
         color: #666;
     }
 
-    .post h2 a:hover {
+    .post h1 a:hover {
         color: #00B7FF;
         text-decoration: none;
     }
@@ -74,6 +82,15 @@ dl.archive-list {
     .post h5 {
         color: #888;
         margin-bottom: 1.5em;
+    }
+
+    .post h5 a {
+        color: #666;
+    }
+
+    .post h5 a:hover {
+        color: #00B7FF;
+        text-decoration: none;
     }
 
 .sidebar {
